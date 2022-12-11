@@ -3,28 +3,100 @@
   <head>
     <title>Missing Word Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <style>
-      .container {
-        max-width: 940px;
-        margin-right: auto;
-        margin-left: auto;
+    <style type="text/css">
+      .top-header {
+        justify-content: center;
+        align-items: center;
+        height: 130px;
+        background-size: cover;
+        background-position: center;
+        min-height: 105px;
+        width: 100%;
+      }
+      h1 {
+        font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+        text-align: center;
+      }
+      .answer{
+        font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+        margin:auto;
+        width: 600px;
+        text-align: center;
+      }
+      .form{
+        font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+        max-width: 600px;
+        margin:auto;
+        text-align: center;
+      }
+      .button-9 {
+        appearance: button;
+        backface-visibility: hidden;
+        background-color: #405cf5;
+        border-radius: 6px;
+        border-width: 0;
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+        font-size: 100%;
+        height: 50px;
+        line-height: 1.15;
+        
+        outline: none;
+        overflow: hidden;
+        padding: 0 25px;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all .2s,box-shadow .08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 20%;
+        margin: 20px 450px;
+      }
+      .button-9:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+      }
+      .button-9:disabled {
+        cursor: default;
+      }
+
+      .button-9:focus {
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
       }
     </style>
+    <link rel="stylesheet" href="templates/styles.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    
   </head>
+
   <body>
     <div class="container">
-      <h1>Missing Word Finder</h1>
+      <div class = "top-header">
+        <h1>Missing Word Finder</h1>
+      </div>
+      
       <form role="form" method='POST' action='/'>
-        <div class="form-group">
-          <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;" autofocus required>
+        <div class="form">
+          <p style = "margin: 40px auto;"> Forgot a word? Enter the sentence or sentences it is used in and replace the word with a *.</p>
+          <div class="form-group">
+            <input type="text" name="url" class="form-control" id="url-box" placeholder="Example: I forgot the word *. It means to grasp or to seize." autofocus required>
+          </div>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="button-9">Submit</button> 
+
       </form>
       <br>
-      <h4>{{ result }}</h4>
+      <div class = "answer">
+        <h3>{{ result }}</h3>
+      </div>
     </div>
     <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
+

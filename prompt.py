@@ -8,7 +8,7 @@ def complete_sentence(input_sentence):
 		response = co.generate(
 			model='xlarge',
 			prompt=prompt,
-			max_tokens=word_count*3,
+			max_tokens=word_count*2,
 			temperature=0.7,
 			k=0,
 			p=1,
