@@ -1,31 +1,16 @@
-"This is a missing word-finding program. Given an incomplete sentence. The * words are replaced by the word you need to find. * = missing word. 
+The writing style of the New York Times can be described as formal and objective writing style, with a focus on reporting the facts and opinions of those involved in the story, clear and concise, and usage of direct quotes. The vocabulary used is generally formal and sophisticated. Some technical terms are also used as well as some colloquial phrases. The publication appears to be written for a general audience. Edit the following article as if you were a New York Times editor:
 
-Prompt: I am calling in today to * a missing credit card. I lost my card when I was at the grocery store and I need to be sent a new one.
-Completed Prompt: I am calling in today to report a missing credit card. I lost my card when I was at the grocery store and I need to be sent a new one.
---
-Prompt: I work as a *. I repair wooden objects and structures.
-Correct Prompt: I work as a carpenter. I repair wooden objects and structures.
---
-Prompt: I was wondering if you had any time to jump on a quick call to * you do at Netflix and what the culture is like.
-Correct Prompt: I was wondering if you had any time to jump on a quick call to share the work you do at Netflix and what the culture is like.
---
-Prompt: Data augmentation is * when we don’t have representative data for all our targeted user personas. 
-Completed Prompt: Data augmentation is beneficial when we don’t have representative data for all our targeted user personas. 
---
-Prompt: Data augmentation is * when we don’t have representative data for all our targeted user personas. 
-Completed Prompt: Data augmentation is helpful when we don’t have representative data for all our targeted user personas. 
---
-Prompt: I'd * to know if there are any internship opportunities in your team during the winter or summer.
-Completed Prompt: I'd love to know if there are any internship opportunities in your team during the winter or summer.
---
-Prompt: The method of * output tokens is a key concept in text generation with language models.
-Completed Prompt: The method of picking output tokens is a key concept in text generation with language models.
-__
-Prompt: I have a family of 4. My *, and 3 children.
-Completed Prompt: I have a family of 4. My wife, and 3 children.
---
-Prompt: The rough storm suddenly *.
-Completed Prompt: The rough storm suddenly abated.
---
-Prompt: {input_sentence}
-Completed Prompt:"
+Unedited: "Usually, the Gridiron Club Dinner is where politicians and media veterans joke around, but on Saturday, Mike Pence criticized Trump while some people are saying that the Capitol riot wasn't a big deal."
+
+Edited: "The annual Gridiron Club Dinner in Washington is usually a venue for lighthearted ribbing between political figures, government officials and the district’s media veterans, but Mr. Pence used the occasion on Saturday to dig into Mr. Trump at a moment when conservative media commentators and some Republicans in Congress have again tried to dismiss the seriousness of the Capitol riot."
+
+Unedited: "U.S. officials accused Russian forces of behaving recklessly after a Russian warplane shot down the MQ-9 Reaper, an essential aircraft for American reconnaissance operations. This incident quickly heightened tensions between the White House and the Kremlin."
+
+Edited: “Several times before the collision, the Su-27s dumped fuel on and flew in front of the MQ-9 in a reckless, environmentally unsound and unprofessional manner,” the military’s European Command said in a statement. “This incident demonstrates a lack of competence in addition to being unsafe and unprofessional.”
+
+Unedited:
+U.S. officials accused Russian forces of behaving recklessly after a Russian warplane shot down the MQ-9 Reaper, an essential aircraft for American reconnaissance operations. This incident quickly heightened tensions between the White House and the Kremlin.
+
+Edited: The downing of the MQ-9 Reaper, a workhorse of the American military’s airborne reconnaissance fleet, immediately escalated tensions between the White House and the Kremlin as U.S. officials accused the Russian forces involved in the incident of behaving dangerously.
+
+Unedited:
