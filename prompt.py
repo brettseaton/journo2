@@ -1,7 +1,7 @@
 import os
 import openai
 
-openai.api_key = "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"
+openai.api_key = <API KEY>
 
 def inference(article_type, article):
 	prompt = ""
