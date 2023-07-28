@@ -1,7 +1,10 @@
 import os
 import openai
+from dotenv import load_dotenv
 
-openai.api_key = "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"
+load_dotenv()
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def inference(article_type, article):
     prompt = ""
