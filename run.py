@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask import request
-from prompt import inference, inf2
+from prompt import inference
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def index():
 		#print(request.form["dropdown"], request.form["content"])
 
 		#result = inference(request.form["dropdown"], request.form["content"])
-		result = inf2(request.form["dropdown"], request.form["content"])
+		result = inference(request.form["dropdown"], request.form["content"])
 	else:
 		print("GET")
 	return render_template('index.html', result = result)
