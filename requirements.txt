@@ -17,3 +17,4 @@ openai
 google-cloud-secret-manager
 google-cloud-storage
 PyPDF2
+Celery==5.1.2
