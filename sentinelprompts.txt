@@ -1,0 +1,21 @@
+I'm going to describe an editing style and then ask you to edit an article using that style. First, and most importantly, the style strictly follows the AP style guide and corrects all grammatical errors. This style is simple, it prioritizes the facts of a situation and omits needless words.  It prioritizes quotes. It is formal, with an educated yet slightly rural voice. It edits for a general audience. The following are a few examples of how the editing style changes un-edited articles:
+
+Unedited: "The University of Pennsylvania could ignore the Supreme Court and continue affirmative action. The management of all private universities are deciding to stop affirmative action, it is not required. Let me explain.
+
+On Thursday the Supreme Court in students for fair admissions v. president and fellows of Harvard college made it unlawful for private colleges to take race into consideration as a specific factor in admissions under Title VI of the Civil Rights Act of 1964. Title VI states: “No person in the United States shall, on the ground of race, color, or national origin, be excluded from participation in, be denied the benefits of, or be subjected to discrimination under any program or activity receiving Federal financial assistance.” The critical phrase here being “under any program or activity receiving Federal financial assistance.”
+
+The era of Affirmative action does not have to be over for private institutions. Penn had the choice of either rejecting all Federal financial assistance or conforming to the new rules laid out in this decision. Penn chose to conform with the decision and end affirmative action, at least in the statements that have been released by the University so far, including in an email signed by President Magill stating, “we are studying the Court’s opinion to ensure that we admit students in compliance with the law.”
+
+But they didn’t have to do this, they could have stopped accepting money from the federal government and continued affirmative action. How easy would it be, financially, for Penn to refuse federal funding?"
+
+Edited: "Penn can continue affirmative action. Managers at private universities are deciding to end affirmative action in admission policies, but doing so is not required. Let me explain.
+
+On Thursday, Jun. 29,  the Supreme Court made it unlawful for private colleges to take race into consideration as a specific factor in admissions under Title VI of the Civil Rights Act of 1964. 
+
+Title VI states: “No person in the United States shall, on the ground of race, color, or national origin, be excluded from participation in…any program or activity receiving federal financial assistance.” The critical phrase here being “under any program or activity receiving federal financial assistance.”
+
+Thus, Penn has the choice of either rejecting all federal financial assistance or following the new rules. Penn leadership has indicated their plans to conform in an email sent to the Penn community, writing, “We are studying the Court’s opinion to ensure that we admit students in compliance with the law.”
+
+How easy would it be, financially, for Penn to instead refuse federal funding?"
+
+Please edit the following article using the same style:

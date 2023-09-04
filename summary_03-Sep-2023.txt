@@ -1,0 +1,119 @@
+03-Sep-2023/nThe provided text does not contain any citations related to drugs or alcohol. Therefore, no text can be returned./n- ACCIDENT-NONINJ incidents:
+  - 23-004736 at TUTTLE CREEK BLVD & E POYNTZ AVE, MANHATTAN
+  - 23-004743 at DENISON AVE & KIMBALL AVE, MANHATTAN
+  - 23-004744 at FORT RILEY BLVD & WESTWOOD RD, MANHATTAN
+  - 23-004756 at 600 BLK NORTHFIELD RD; IN FRONT OF 623 NORTHFIELD, MANHATTAN
+- ALCH-MIP/MIC incident:
+  - 23-004747 at 712 N 12TH ST; AGGIE LOUNGE, MANHATTAN
+- BATTERY incidents:
+  - 23-004739 at 1001 S SETH CHILD RD; RILEY COUNTY JAIL RCJ, MANHATTAN
+  - 23-004753 at 1823 COLLEGE AVE; VIA CHRISTI; ED 2, MANHATTAN
+- BURGLARY incident:
+  - 23-004733 at 610 S DELAWARE AVE; SAFE STORAGE UNITS, MANHATTAN
+- CDP incidents:
+  - 23-004735 at 610 S DELAWARE AVE; SAFE STORAGE UNITS, MANHATTAN
+  - 23-004752 at 1337 ANDERSON AVE, MANHATTAN
+- CRIMINAL THREAT incident:
+  - 23-004740 at 414 LARAMIE ST # 2, MANHATTAN
+- DISORD CONDUCT incident:
+  - 23-004749 at 1111 MORO ST; TATE'S, MANHATTAN
+- DIST-PEAC/NOISE incident:
+  - 23-004746 at 823 LARAMIE ST, MANHATTAN
+- DOMESTIC incidents:
+  - 23-004750
+  - 23-004751
+- DUI-ALC OR DRUG incident:
+  - 23-004755 at 700 BLK N 12TH ST, MANHATTAN
+- LARCENY-MTR VEH incident:
+  - 23-004738 at 531 MORO ST, MANHATTAN
+- PUBLIC CONTACT incident:
+  - 23-004742 at N 3RD ST & OSAGE PL, MANHATTAN
+- TRAFFIC STOP incidents:
+  - 23-004737 at S SETH CHILD RD & ANDERSON AVE SB ON RAMP; SB ON RAM, MANHATTAN
+  - 23-004748 at 900 BLK HUMBOLDT ST, MANHATTAN
+  - 23-004754 at N 12TH ST & MORO ST, MANHATTAN
+- TRESPASS incident:
+  - 23-004734 at 610 S DELAWARE AVE; SAFE STORAGE UNITS, MANHATTAN
+- UNWANTED SUBJ incident:
+  - 23-004745 at 101 BLUEMONT AVE; WALMART, MANHATTAN
+- WARRANT incident:
+  - 23-004741 at 1001 S SETH CHILD RD; RILEY COUNTY POLICE DEPARTMENT RCPD, MANHATTAN
+- Total incidents included in this report: 24/n- Arrest 1:
+  - Name: Joseph Luis Bacariley
+  - Arresting Agency: CO PD 8101 (MHK)
+  - Arrest Type: Custody Probable Cause Arrest
+  - Date and Time of Arrest: 9/3/23 2:39 am
+  - Total Bond: $750.00
+  - Age: 22
+  - Location: FT Riley, KS
+  - Arrested For: Driving under the influence of drugs/alcohol; 1st conviction; blood/breath .08 or > 
+  - Case #: 23-004755
+- Arrest 2:
+  - Name: Jorge Davila-Diaz
+  - Arresting Agency: Riley CO PD 8101 (MHK)
+  - Arrest Type: Custody Probable Cause Arrest
+  - Date and Time of Arrest: 9/3/23 2:37 am
+  - Total Bond: $750.00
+  - Age: 22
+  - Location: FT Riley, KS
+  - Arrested For: Driving under the influence of drugs/alcohol; 1st conviction; blood/breath .08 or > 
+  - Case #: 23-004754
+- Arrest 3:
+  - Name: Wesley Claire Zeka
+  - Arresting Agency: Riley CO PD 8101 (MHK)
+  - Arrest Type: Custody Probable Cause Arrest
+  - Date and Time of Arrest: 9/3/23 12:49 am
+  - Total Bond: $1,000.00
+  - Age: 18
+  - Location: Manhattan, KS
+  - Arrested For: Domestic battery; Knowing rude physical contact w/ family member or dating relationship, Liquor; Purchase/possess/consume by minor 18-20 yrs; 1st conviction
+  - Case #: 23-004751
+- Arrest 4:
+  - Name: Jennifer Lynn Whalen
+  - Arresting Agency: Kansas Highway Patrol - HDQ
+  - Arrest Type: Custody Probable Cause Arrest
+  - Date and Time of Arrest: 9/2/23 8:57 pm
+  - Total Bond: $750.00
+  - Age: 49
+  - Location: Manhattan, KS
+  - Arrested For: Improper Drive on Laned Roadway
+- Arrest 5:
+  - Name: James Michaeli Cancelada
+  - Arresting Agency: Kansas State Univ Police Dept
+  - Arrest Type: Custody Probable Cause Arrest
+  - Date and Time of Arrest: 9/2/23 6:51 pm
+  - Total Bond: $2,000.00
+  - Age: 20
+  - Location: Wamego, KS
+  - Arrested For: Criminal threat; Unknown circumstance, Disorderly conduct; Disturbing a meeting, assembly or procession, Battery on LEO; Physical contact w/ university or campus police on duty
+  - Case #: 23-000267
+- Arrest 6:
+  - Name: Denaal Latress Thompson
+  - Arresting Agency: Riley CO PD 8101 (MHK)
+  - Arrest Type: Custody W/Warrant
+  - Date and Time of Arrest: 9/2/23 6:04 pm
+  - Total Bond: $5,000.00
+  - Age: 39
+  - Location: Manhattan, KS
+  - Arrested For: Failure to appear
+  - Case #: 23-004741
+- Arrest 7:
+  - Name: Douglas Lee Carson
+  - Arresting Agency: Riley CO PD 8101 (MHK)
+  - Arrest Type: Custody W/Warrant
+  - Date and Time of Arrest: 9/2/23 6:03 pm
+  - Total Bond: $500.00
+  - Age: 40
+  - Location: KS
+  - Arrested For: Failure to appear
+  - Case #: 23-004742
+- Arrest 8:
+  - Name: Noah Riley Vandenboom
+  - Arresting Agency: Riley CO PD 8101 (MHK)
+  - Arrest Type: Custody Probable Cause Arrest
+  - Date and Time of Arrest: 9/1/23 11:59 pm
+  - Total Bond: $1,500.00
+  - Age: 25
+  - Location: West Aliss, WI
+  - Arrested For: Disorderly conduct; Brawling or fighting, Criminal damage to property; Value unknown, Interference with LEO; obstruct/resist/oppose misdemeanor warrant service or execution
+  - Case #: 23-004729/n

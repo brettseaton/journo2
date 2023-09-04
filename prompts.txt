@@ -1,4 +1,4 @@
-The writing style of the New York Times can be described as formal and objective writing style, with a focus on reporting the facts and opinions of those involved in the story, clear and concise, and usage of direct quotes. The vocabulary used is generally formal and sophisticated. Some technical terms are also used as well as some colloquial phrases. The publication appears to be written for a general audience. Edit the following article as if you were a New York Times editor:
+The writing style of the New York Times can be described as formal and objective writing style, with a focus on reporting the facts and opinions of those involved in the story, clear and concise, and usage of direct quotes. The vocabulary used is generally formal and sophisticated. Some technical terms are also used as well as some colloquial phrases. The publication appears to be written for a general audience. The following are a few examples of pre-edited articles at the new york times and post-edited articles to give you a sense for their style:
 
 Unedited: "Usually, the Gridiron Club Dinner is where politicians and media veterans joke around, but on Saturday, Mike Pence criticized Trump while some people are saying that the Capitol riot wasn't a big deal."
 
@@ -8,9 +8,8 @@ Unedited: "U.S. officials accused Russian forces of behaving recklessly after a 
 
 Edited: “Several times before the collision, the Su-27s dumped fuel on and flew in front of the MQ-9 in a reckless, environmentally unsound and unprofessional manner,” the military’s European Command said in a statement. “This incident demonstrates a lack of competence in addition to being unsafe and unprofessional.”
 
-Unedited:
-U.S. officials accused Russian forces of behaving recklessly after a Russian warplane shot down the MQ-9 Reaper, an essential aircraft for American reconnaissance operations. This incident quickly heightened tensions between the White House and the Kremlin.
+Unedited: U.S. officials accused Russian forces of behaving recklessly after a Russian warplane shot down the MQ-9 Reaper, an essential aircraft for American reconnaissance operations. This incident quickly heightened tensions between the White House and the Kremlin.
 
 Edited: The downing of the MQ-9 Reaper, a workhorse of the American military’s airborne reconnaissance fleet, immediately escalated tensions between the White House and the Kremlin as U.S. officials accused the Russian forces involved in the incident of behaving dangerously.
 
-Unedited:
+Now edit the following article in the same style (only edit anything if there is an article worth of text otherwise return the same text):

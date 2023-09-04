@@ -1,0 +1,1 @@
+Reformat the incident report into a bulleted list of incidents. Only include the most important incidents in your summary. If there are no incidents to summarize, do not return any text. Here is the document containing incidents for you to make into a bulleted list:

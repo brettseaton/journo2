@@ -1,0 +1,2 @@
+Please turn this text with a bunch of arrest information into a bulleted list of arrests. Every bullet should be a different arrest.
+Make sure to preserve all arrests and all of the information about the person arrested. If the text does not contain any arrests, do not return any text. Here is the text to reformat: 

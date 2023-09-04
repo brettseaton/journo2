@@ -1,0 +1,3 @@
+Please reformat the list of citations into a bulleted list of citations, preserving all factual information about each citation.
+Only include drug or alcohol related citations. Only include the style of the above citations, none of the content. If the text does not contain any citations, do not return any text. Here is the list of citations to re-format:
+

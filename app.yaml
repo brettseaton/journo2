@@ -1,0 +1,10 @@
+runtime: python39  # Update this if you're using a different Python version
+instance_class: F2  # Choose an instance class based on your needs
+entrypoint: gunicorn -b :$PORT run:app -w 4
+ # run is the file and app is the Flask object
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 3
+
