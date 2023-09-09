@@ -300,7 +300,9 @@
 <body>
 <div class="top-header">
     <h1>Crime Summaries</h1>
+    <button id="startButton">Get Crime Summaries</button>
 </div>
+
 <div class="container">
     <div class="form">
         {% for date, summary in summaries.items() %}
@@ -315,10 +317,103 @@
         {% endfor %}
     </div>
 </div>
+
+<!-- Section for displaying crime summaries -->
+<div id="summaries">
+    <!-- Text boxes will be appended here dynamically -->
+</div>
+
+<script>
+    document.getElementById('startButton').addEventListener('click', startTask);
+
+    let task_id = null;  // Store the task ID
+
+    async function startTask() {
+    try {
+        const response = await fetch('/crime_summaries');  // Start the task
+        if (response.status === 202) {
+            const location = response.headers.get('Location');
+            task_id = location.split('/').pop();  // Extract task_id from Location header
+            pollForCompletion();  // Start polling for task completion
+        } else {
+            console.error('Unexpected response status:', response.status);
+        }
+    } catch (error) {
+        console.error('Error starting task:', error);
+    }
+    }
+    async function pollForCompletion() {
+    if (task_id === null) {
+        console.error('Task ID is null. Cannot poll.');
+        return;
+    }
+    const intervalId = setInterval(async () => {
+        try {
+            const response = await fetch(`/status/${task_id}`);
+            const data = await response.json();
+            if (data.state !== 'PENDING') {
+                clearInterval(intervalId);  // Stop polling if task is no longer pending
+                updateSummaries(data.summaries);  // Update the summaries
+            }
+        } catch (error) {
+            console.error('Error polling for completion:', error);
+        }
+    }, 2000);  // Poll every 2 seconds
+}
+
+    function updateSummaries(data) {
+        const summariesDiv = document.getElementById('summaries');
+        summariesDiv.innerHTML = '';  // Clear existing content
+        
+        for (const [date, summary] of Object.entries(data)) {
+            // Create new form group for each date and summary
+            const formGroup = document.createElement('div');
+            formGroup.className = 'form-group';
+            
+            const label = document.createElement('label');
+            label.setAttribute('for', date);
+            label.textContent = `${date}:`;
+            
+            const textarea = document.createElement('textarea');
+            textarea.id = date;
+            textarea.name = date;
+            textarea.rows = 10;
+            textarea.cols = 70;
+            textarea.placeholder = `Summary for ${date}`;
+            textarea.value = summary;
+            
+            formGroup.appendChild(label);
+            formGroup.appendChild(textarea);
+            summariesDiv.appendChild(formGroup);
+        }
+    }
+
+    // Fetch summaries on page load and at a regular interval thereafter
+    window.onload = () => {
+        fetchSummaries();
+        setInterval(fetchSummaries, 60000);  // Fetch every 60 seconds
+    };
+
+    var source = new EventSource("/stream");
+
+    // Listen for messages from the server
+    source.onmessage = function(event) {
+        // Parse the received data (assuming it's JSON)
+        var summaryData = JSON.parse(event.data);
+        
+        // Call the existing updateSummaries function
+        updateSummaries(summaryData);
+    };
+
+    // Handle any errors that occur.
+    source.onerror = function(error) {
+        console.log(`EventSource failed: ${error}`);
+        source.close();
+    };
+
+</script>
+
 <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script>
-    /* Any necessary JavaScript */
-</script>
 </body>
 </html>

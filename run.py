@@ -1,36 +1,40 @@
 import os
-from flask import Flask, render_template
+import glob
+from flask import Flask, render_template, jsonify, request
 from flask import request
 from prompt import inference
-from emailDownload import main
-from celery import Celery
+from flask_sse import sse
+from emailDownload import summarize_with_openai, concatenate_summaries, main
+from celery_config import celery
 
 app = Flask(__name__)
-
-def make_celery(app):
-    celery = Celery(
-        app.import_name,
-        backend=app.config['result_backend'],
-        broker=app.config['CELERY_BROKER_URL']
-    )
-    celery.conf.update(app.config)
-    return celery
-
-app.config.update(
-    CELERY_BROKER_URL='redis://localhost:6380/0',
-    result_backend='redis://localhost:6380/0'
-)
-
-celery = make_celery(app)
 
 @app.route('/generation', methods=['GET'])
 def generation_tool():
     return render_template('generation.html')
 
+app.register_blueprint(sse, url_prefix='/stream')
+
 @app.route('/crime_summaries', methods=['GET'])
 def crime_summaries():
-    summaries = main()
-    return render_template('crime_summaries.html', summaries=summaries)
+    tasks = main()
+    task_ids = tasks.get('task_ids', [])
+    all_summaries = tasks.get('all_summaries', {})
+    return render_template('crime_summaries.html', task_ids=task_ids)
+
+@app.route('/status/<task_ids>', methods=['GET'])
+def taskstatus(task_ids):
+    task_ids_list = task_ids.split(',')
+    task_states = {}
+    
+    for task_id in task_ids_list:
+        task = celery.AsyncResult(task_id)
+        state_info = {'state': task.state, 'status': 'Pending...' if task.state == 'PENDING' else 'Task completed'}
+        sse.publish({"message": state_info}, type='greeting')
+        task_states[task_id] = state_info
+    
+    return jsonify(task_states)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

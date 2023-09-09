@@ -6,6 +6,8 @@ import PyPDF2
 import tempfile
 import logging
 import re
+from celery_config import celery
+from celery import group, chain
 from datetime import datetime, timedelta
 from email.header import decode_header
 from google.cloud import secretmanager, storage
@@ -34,6 +36,7 @@ def summary_exists(date):
     logging.info(f"Summary file for {date} exists: {exists}")
     return exists
 
+@celery.task
 def save_summary(date, summary):
     try:
         with open(f'summary_{date}.txt', 'w') as f:
@@ -139,6 +142,7 @@ def get_file_from_gcs(bucket_name, blob_name):
         logging.error(f"Error fetching file from GCS: {e}")
         return ""
 
+@celery.task
 def summarize_with_openai(content, filename):
     try:
         if filename == "DailyArrest_Media.pdf":
@@ -177,28 +181,13 @@ def summarize_with_openai(content, filename):
     except Exception as e:
         logging.error(f"Error summarizing with OpenAI: {e}")
         return "" 
-
+@celery.task
 def concatenate_summaries(date, content):
-    # try:
-    #     giantString = "".join(content)
-    #     promptFile = get_file_from_gcs("journo-text-data", 'emailConcatenate.txt')
-    #     full_content = promptFile + giantString
-    #     logging.info(f"Content being sent to OpenAI for concatenation: {full_content}")
-    #     response = openai.Completion.create(
-    #         model="gpt-4",
-    #         prompt=promptFile + giantString
-    #     )
-    #     logging.info(f"Received concatenated response from OpenAI: {response.choices[0].text.strip()}")
-    #     return response.choices[0].text.strip()
-    # except Exception as e:
-    #     logging.error(f"Error concatenating summaries with OpenAI: {e}")
-    #     return ""
     returnString = ""
     returnString = returnString + str(date) + "/n"
     for summary in content:
         returnString += summary + "/n"
     return returnString
-
 
 def main():
     try:
@@ -208,6 +197,7 @@ def main():
         logging.error(f"Error fetching secrets: {e}")
         return []
     SENDER_EMAIL = 'AWintermote@rileycountypolice.org'
+    task_ids = []
 
     today = datetime.now()
     # Calculate dates for the last 5 days
@@ -216,6 +206,7 @@ def main():
     all_summaries = {}
     mail = login_to_mailbox(EMAIL, PASSWORD)
     for date_to_search in dates_to_search:
+        daily_tasks = []
         summary = ""
         try:
             if summary_exists(date_to_search):
@@ -231,15 +222,22 @@ def main():
                         continue
                     filePaths.append(attachment)
                     content = parse_pdf_content(attachment)
-                    restylized = summarize_with_openai(content, filename)
-                    daily_summaries.append(restylized)
+                    daily_tasks.append(summarize_with_openai.s(args=[content, filename]))
                     # Concatenate all summaries of the day
-                summary = concatenate_summaries(date_to_search, daily_summaries)
-                save_summary(date_to_search, summary)
+            summarization_group = group(daily_summaries)
+            pipeline = chain(
+                    group(*daily_tasks),
+                    concatenate_summaries.s(date_to_search),
+                    save_summary.s(date_to_search)
+                )
+
+            result = pipeline.apply_async()
+            task_ids.append(result.id)
+                
         except Exception as e:
             logging.error(f"Error processing data for {date_to_search}: {e}")
         all_summaries[date_to_search] = summary
-    return all_summaries
+    return {'task_ids': task_ids, 'all_summaries': all_summaries}
 
 if __name__ == "__main__":
     main()
