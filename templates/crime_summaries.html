@@ -326,39 +326,37 @@
 <script>
     document.getElementById('startButton').addEventListener('click', startTask);
 
-    let task_id = null;  // Store the task ID
+let task_ids = [];  // Store the task IDs
 
-    async function startTask() {
+async function startTask() {
     try {
         const response = await fetch('/crime_summaries');  // Start the task
         if (response.status === 202) {
-            const location = response.headers.get('Location');
-            task_id = location.split('/').pop();  // Extract task_id from Location header
-            pollForCompletion();  // Start polling for task completion
+            const data = await response.json();
+            task_ids = data.task_ids;  // Extract task_ids from the server response
+            initSSE();  // Initialize SSE
         } else {
             console.error('Unexpected response status:', response.status);
         }
     } catch (error) {
         console.error('Error starting task:', error);
     }
-    }
-    async function pollForCompletion() {
-    if (task_id === null) {
-        console.error('Task ID is null. Cannot poll.');
-        return;
-    }
-    const intervalId = setInterval(async () => {
-        try {
-            const response = await fetch(`/status/${task_id}`);
-            const data = await response.json();
-            if (data.state !== 'PENDING') {
-                clearInterval(intervalId);  // Stop polling if task is no longer pending
-                updateSummaries(data.summaries);  // Update the summaries
-            }
-        } catch (error) {
-            console.error('Error polling for completion:', error);
+}
+
+function initSSE() {
+    var source = new EventSource(`/status/${task_ids.join(',')}`);  // Adjust this URL to match your server-side route
+
+    source.onmessage = function(event) {
+        var data = JSON.parse(event.data);
+        if (data.type === 'task_update') {  // Check the message type
+            updateSummaries(data.message);
         }
-    }, 2000);  // Poll every 2 seconds
+    };
+
+    source.onerror = function(error) {
+        console.log(`EventSource failed: ${error}`);
+        source.close();
+    };
 }
 
     function updateSummaries(data) {
